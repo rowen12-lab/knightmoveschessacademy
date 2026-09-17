@@ -1,60 +1,16 @@
-/* Palette: Deep Navy & Gold */
 :root {
-  --primary-color: #1a2530;
-  --accent-color: #d4af37;
-  --bg-color: #f8f9fa;
-  --text-color: #2c3e50;
+  --primary-color: #1b3b2b;
+  --accent-color: #c29b38;
+  --bg-color: #f7f6f2;
+  --text-color: #222222;
 }
 
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  background-color: var(--primary-color);
-  color: #ffffff;
-  padding: 1.5rem;
-  text-align: center;
-}
-
-header h1 {
-  color: #ffffff;
-  margin-top: 0.5rem;
-}
-
-nav {
-  margin-top: 1rem;
-}
-
-nav a {
-  color: #ffffff;
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: var(--accent-color);
-}
-
-main {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-h2, h3 {
-  color: var(--primary-color);
-}
-
-footer {
-  background-color: var(--primary-color);
-  color: #ffffff;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-
+body { background-color: var(--bg-color); color: var(--text-color); font-family: Arial, sans-serif; margin: 0; padding: 0; }
+header { background-color: var(--primary-color); color: #ffffff; padding: 1.5rem; text-align: center; }
+header h1 { color: #ffffff; margin-top: 0.5rem; }
+nav { margin-top: 1rem; }
+nav a { color: #ffffff; text-decoration: none; margin: 0 10px; font-weight: bold; }
+nav a:hover { color: var(--accent-color); }
+main { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+h2, h3 { color: var(--primary-color); }
+footer { background-color: var(--primary-color); color: #ffffff; text-align: center; padding: 1rem; margin-top: 2rem; }
