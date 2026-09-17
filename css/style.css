@@ -1,8 +1,8 @@
 :root {
-  --primary-color: #1b3b2b;
-  --accent-color: #c29b38;
-  --bg-color: #f7f6f2;
-  --text-color: #222222;
+  --primary-color: #2b1e1a;
+  --accent-color: #b85b35;
+  --bg-color: #f4f0eb;
+  --text-color: #1f1917;
 }
 
 body { background-color: var(--bg-color); color: var(--text-color); font-family: Arial, sans-serif; margin: 0; padding: 0; }
