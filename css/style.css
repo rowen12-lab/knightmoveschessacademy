@@ -5,6 +5,10 @@
   --text-color: #2c3e50;/* Charcoal body text */
 }
 
+* {
+  box-sizing: border-box; /* NEW: prevents padding/borders from breaking layout widths */
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -12,6 +16,13 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
+}
+
+/* NEW: makes all images responsive by default */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 header {
@@ -25,16 +36,21 @@ header img {
   display: block;
   margin: 0 auto 10px auto;
   border-radius: 4px;
+  max-width: 120px; /* NEW: keeps logo a sensible size on all screens */
 }
 
 header h1 {
   color: #ffffff;
   margin: 0.5rem 0 1rem 0;
-  font-size: 2rem;
+  font-size: 1.5rem; /* CHANGED: smaller base size for mobile, scales up below */
 }
 
 nav {
   margin-top: 1rem;
+  display: flex;              /* NEW */
+  flex-direction: column;     /* NEW: stacked on mobile */
+  align-items: center;        /* NEW */
+  gap: 0.5rem;                /* NEW */
 }
 
 nav a {
@@ -59,6 +75,33 @@ h2, h3 {
   color: var(--primary-color);
 }
 
+/* NEW: basic form responsiveness, since enquiry.html has a form */
+form {
+  max-width: 500px;
+}
+
+input, select, textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  box-sizing: border-box;
+}
+
+/* NEW: table responsiveness, since contact.html has an opening hours table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+@media (max-width: 500px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
 footer {
   background-color: var(--primary-color);
   color: #ffffff;
@@ -69,4 +112,29 @@ footer {
 
 footer img {
   margin: 0 auto 8px auto;
+  max-width: 70px; /* NEW: keeps footer logo small and consistent */
+}
+
+/* ==========================================================
+   NEW: Responsive breakpoints
+   ========================================================== */
+
+/* Tablet and up */
+@media (min-width: 600px) {
+  header h1 {
+    font-size: 2rem; /* back to your original larger size once screen is wider */
+  }
+
+  nav {
+    flex-direction: row;       /* side-by-side nav on bigger screens */
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* Desktop and up */
+@media (min-width: 900px) {
+  main {
+    padding: 0 2rem;
+  }
 }
