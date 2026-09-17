@@ -170,6 +170,27 @@ The main page is the Home page, which connects to the four other pages.
 ```
 
 ---
+## Part 2: CSS Styling and Responsive Design
+
+Part 2 focused on applying visual design to the website and ensuring it adapts
+correctly across different screen sizes. Completed in this part:
+
+- Applied the Midnight Navy, Gold, and White colour scheme defined in the Website Project Proposal.
+- Styled all five pages consistently, including the header, navigation menu, forms, tables, and footer.
+- Made all images responsive so they scale correctly without overflowing on smaller screens.
+- Added responsive breakpoints so the navigation, layout, and form elements adapt across mobile, tablet, and desktop screen sizes.
+- Styled the enquiry form and opening hours table for readability on all devices.
+
+### Screenshot Evidence
+
+**Desktop View**
+
+
+**Tablet View**
+
+
+**Mobile View**
+
 
 ## Timeline and Milestones
 
@@ -191,8 +212,6 @@ knightmoveschessacademy/
 ├── README.md
 ├── css/
 │ └── style.css
-├── js/
-│ └── main.js
 └── images/
 
 ---
