@@ -222,6 +222,7 @@ knightmoveschessacademy/
 - **2026-08-14 — v0.2:** Expanded thin content sections across all pages for depth and clarity.
 - **2026-08-14 — v0.3:** Added images across all pages.
 - **2026-08-14 — v0.4:** Added README with student info, goals, timeline, sitemap, and references.
+- - **2026-09-15 — v0.5:** Added responsive CSS styling with Midnight Navy/Gold colour scheme, mobile/tablet/desktop breakpoints, and Part 2 desktop screenshot evidence.
 ---
 
 ## References
