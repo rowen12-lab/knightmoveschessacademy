@@ -184,13 +184,14 @@ correctly across different screen sizes. Completed in this part:
 ### Screenshot Evidence
 
 **Desktop View**
+![Desktop screenshot](images/Screenshot desktop view.jpeg)
 
 
 **Tablet View**
-
+![Tablet screenshot](images/Screenshot tab view.jpeg)
 
 **Mobile View**
-
+![Mobile screenshot](images/Screenshot mobile phone view.jpeg)
 
 ## Timeline and Milestones
 
