@@ -270,7 +270,13 @@ New Part 3 features
 
 2026-11-01 — v0.7: Created the js folder and js/script.js, and linked the script at the end of index.html.
 2026-11-01 — v0.8: Replaced the "What We Offer" bullet list on index.html with an accessible accordion built with buttons using aria-expanded and aria-controls. Added the accordion behaviour in js/script.js and the accordion styling and open/close transition in css/style.css.
-2026-11-01 — v0.8.1: Added a meta description to index.html for SEO. Fixed HTML structure issues on the page: restored the viewport meta tag, closed the accordion and section tags correctly, and corrected a missing space in the introduction text.
+2026-11-01 — v0.8.1: Added a meta description to index.html for SEO.
+Fixed HTML structure issues on the page: restored the viewport meta tag, closed the accordion and section tags correctly, and corrected a missing space in the introduction text.
+v0.9: Rebuilt the services.html programme content as a JavaScript list in js/script.js, rendered as cards with DOM methods.
+Added a search box and a level filter that update the cards and a results count. Added a “no results” message and a clear filters button.
+Added card styling, hover and fade-in animation in css/style.css.
+Added a meta description, removed a stray closing </section> tag, and linked js/script.js.
+Dynamic content with search and filter Done.
  
 ---
 
