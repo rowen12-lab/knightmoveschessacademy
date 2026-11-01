@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Knight Moves Chess Academy is a non-profit chess academy offering beginner, intermediate and advanced chess lessons, tournaments and friendly activities for all ages.">
     <title>Knight Moves Chess Academy | Home</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -34,34 +35,35 @@
     <!-- Main content of the Home page -->
     <main>
 
-<!-- Introduction section -->
-<section>
+        <!-- Introduction section -->
+        <section>
 
-    <h2>Welcome to Knight Moves Chess Academy</h2>
+            <h2>Welcome to Knight Moves Chess Academy</h2>
 
-    <p>
-        Welcome to a place where all pieces are valued and where you can
-        become a champion. Whether you have never touched a chess piece
-        before or you have been playing for years, Knight Moves Chess
-        Academy is a place built for you to learn, grow, and belong.
-    </p>
+            <p>
+                Welcome to a place where all pieces are valued and where you can
+                become a champion. Whether you have never touched a chess piece
+                before or you have been playing for years, Knight Moves Chess
+                Academy is a place built for you to learn, grow, and belong.
+            </p>
 
-</section>
+        </section>
 
 
-<!-- Academy introduction -->
-<section>
+        <!-- Academy introduction -->
+        <section>
 
-    <h3>Think. Plan. Move. Succeed.</h3>
+            <h3>Think. Plan. Move. Succeed.</h3>
 
-    <p>
-        Knight Moves Chess Academy is a non-profit chess academy dedicated
-        to making chess accessible to everyone, regardless of age, skill
-        level, or financial background. We believe every child and adult
-        deserves the chance to discover what chess can teach them.
-    </p>
+            <p>
+                Knight Moves Chess Academy is a non-profit chess academy dedicated
+                to making chess accessible to everyone, regardless of age, skill
+                level, or financial background. We believe every child and adult
+                deserves the chance to discover what chess can teach them.
+            </p>
 
-</section>
+        </section>
+
 
         <!-- Hero image section -->
         <section>
@@ -94,26 +96,58 @@
         </section>
 
 
-        <!-- What we offer section as an academy -->
-<section>
+        <!-- What we offer section: accordion (behaviour in js/script.js) -->
+        <section>
 
-    <h2>What We Offer</h2>
+            <h2>What We Offer</h2>
 
-    <p>
-        Knight Moves Chess Academy offers a range of programmes suited to
-        every stage of a player's journey, from a first introduction to
-        the game through to competitive tournament preparation.
-    </p>
+            <p>
+                Knight Moves Chess Academy offers a range of programmes suited to
+                every stage of a player's journey, from a first introduction to
+                the game through to competitive tournament preparation. Select a
+                programme below to find out more.
+            </p>
 
-    <ul>
-        <li>Beginner chess lessons</li>
-        <li>Intermediate chess training</li>
-        <li>Advanced chess development</li>
-        <li>Chess tournaments and competitions</li>
-        <li>Friendly chess activities</li>
-    </ul>
+            <div class="accordion">
 
-</section>
+                <h3>
+                    <button class="accordion-button" aria-expanded="false" aria-controls="offer-1">Beginner chess lessons</button>
+                </h3>
+                <div class="accordion-panel" id="offer-1">
+                    <p>Learn how each piece moves, the basic rules and simple opening ideas in a friendly, pressure-free setting.</p>
+                </div>
+
+                <h3>
+                    <button class="accordion-button" aria-expanded="false" aria-controls="offer-2">Intermediate chess training</button>
+                </h3>
+                <div class="accordion-panel" id="offer-2">
+                    <p>Build your tactics, middle-game planning and endgame skills through guided practice and games.</p>
+                </div>
+
+                <h3>
+                    <button class="accordion-button" aria-expanded="false" aria-controls="offer-3">Advanced chess development</button>
+                </h3>
+                <div class="accordion-panel" id="offer-3">
+                    <p>Deepen your opening knowledge, study strategy and analyse your own games with experienced coaches.</p>
+                </div>
+
+                <h3>
+                    <button class="accordion-button" aria-expanded="false" aria-controls="offer-4">Chess tournaments and competitions</button>
+                </h3>
+                <div class="accordion-panel" id="offer-4">
+                    <p>Practise in real tournament conditions and prepare for competitive play.</p>
+                </div>
+
+                <h3>
+                    <button class="accordion-button" aria-expanded="false" aria-controls="offer-5">Friendly chess activities</button>
+                </h3>
+                <div class="accordion-panel" id="offer-5">
+                    <p>Casual games and community events where everyone is welcome.</p>
+                </div>
+
+            </div>
+
+        </section>
 
 
         <!-- Call to action -->
@@ -149,6 +183,9 @@
         </p>
 
     </footer>
+
+    <!-- Part 3: JavaScript for interactive features -->
+    <script src="js/script.js"></script>
 
 </body>
 
