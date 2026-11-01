@@ -191,3 +191,53 @@ footer img {
   h2 { font-size: 2rem; }
   h3 { font-size: 1.5rem; }
 }
+/* ==========================================================
+   Part 3: Accordion (index.html)
+   ========================================================== */
+
+.accordion h3 {
+  margin: 0;
+}
+
+.accordion-button {
+  width: 100%;
+  text-align: left;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-bottom: 1px solid var(--accent-color);
+  padding: 0.9rem 2.5rem 0.9rem 1rem;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-button::after {
+  content: "+";
+  position: absolute;
+  right: 1rem;
+  color: var(--accent-color);
+  font-size: 1.25rem;
+}
+
+.accordion-button[aria-expanded="true"]::after {
+  content: "\2212";
+}
+
+.accordion-button:hover,
+.accordion-button:focus-visible {
+  background-color: #334155;
+  outline: 2px solid var(--accent-color);
+}
+
+.accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background-color: #f8fafc;
+  padding: 0 1rem;
+}
+
+.accordion-panel p {
+  margin: 0.75rem 0;
+}
