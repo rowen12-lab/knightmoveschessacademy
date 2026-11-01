@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Knight Moves Chess Academy programmes: beginner, junior, intermediate and advanced chess lessons, plus workshops and tournaments. Search and filter to find the right fit.">
     <title>Knight Moves Chess Academy | Services</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -38,14 +39,13 @@
 
             <h2>Our Services and Programmes</h2>
 
-               <p>
-    Knight Moves Chess Academy offers chess programmes designed
-    for different ages and experience levels. Whether you are
-    a beginner or an experienced competitive player, our structured
-    programmes are designed to meet you where you are and help you
-    grow at your own pace.
-</p>
-        </section>
+            <p>
+                Knight Moves Chess Academy offers chess programmes designed
+                for different ages and experience levels. Whether you are
+                a beginner or an experienced competitive player, our structured
+                programmes are designed to meet you where you are and help you
+                grow at your own pace.
+            </p>
 
         </section>
 
@@ -60,104 +60,36 @@
         </section>
 
 
-        
-        <!-- Beginner programme -->
+        <!-- Part 3: search and filter. The programme cards are built by js/script.js -->
         <section>
 
-            <h2>Beginner Chess Programme</h2>
+            <h2>Find a Programme</h2>
 
-            <p>
-                Our beginner programme is designed for players who are
-                completely new to chess or are still learning the basics.
-            </p>
+            <div class="filter-bar" role="search">
 
-            <h3>Students Learn:</h3>
+                <label for="programme-search">Search programmes</label>
+                <input type="search" id="programme-search" placeholder="Try endgame, tactics or puzzles">
 
-            <ul>
-                <li>How the chessboard is organised</li>
-                <li>How each chess piece moves</li>
-                <li>Basic chess rules</li>
-                <li>Check and checkmate</li>
-                <li>Basic chess tactics</li>
-                <li>Basic opening principles</li>
-            </ul>
+                <label for="programme-level">Filter by level</label>
+                <select id="programme-level">
+                    <option value="all">All levels</option>
+                </select>
 
-        </section>
+                <button type="button" id="programme-clear">Clear filters</button>
 
+            </div>
 
-        <!-- Junior programme -->
-        <section>
+            <p id="programme-count" aria-live="polite"></p>
 
-            <h2>Junior Chess Programme</h2>
+            <div id="programme-list" class="programme-grid"></div>
 
-            <p>
-                The Junior Chess Programme introduces children to chess
-                through practical games, puzzles and interactive activities.
-            </p>
-
-            <p>
-                The programme helps young players develop concentration,
-                patience, problem-solving and strategic thinking.
-            </p>
-
-        </section>
-
-
-        <!-- Intermediate programme -->
-        <section>
-
-            <h2>Intermediate Chess Programme</h2>
-
-            <p>
-                This programme is designed for players who understand the
-                fundamentals and want to develop stronger tactical and
-                strategic skills.
-            </p>
-
-            <ul>
-                <li>Opening principles</li>
-                <li>Tactical combinations</li>
-                <li>Positional play</li>
-                <li>Strategic planning</li>
-                <li>Endgame techniques</li>
-                <li>Game analysis</li>
-            </ul>
-
-        </section>
-
-
-        <!-- Advanced programme -->
-        <section>
-
-            <h2>Advanced Chess Programme</h2>
-
-            <p>
-                Our advanced programme is aimed at experienced players who
-                want to prepare for competitive chess.
-            </p>
-
-            <ul>
-                <li>Advanced tactics</li>
-                <li>Opening preparation</li>
-                <li>Positional strategy</li>
-                <li>Endgame theory</li>
-                <li>Opponent analysis</li>
-                <li>Tournament preparation</li>
-            </ul>
-
-        </section>
-
-
-        <!-- Workshops and tournaments -->
-        <section>
-
-            <h2>Chess Workshops and Tournaments</h2>
-
-            <p>
-                We organise chess workshops and tournaments that allow
-                players to practise their skills, gain experience and
-                enjoy the competitive side of chess.
-            </p>
+            <noscript>
+                <p>
+                    Please turn on JavaScript to browse our programmes: Beginner,
+                    Junior, Intermediate and Advanced chess programmes, plus
+                    chess workshops and tournaments.
+                </p>
+            </noscript>
 
         </section>
 
@@ -174,6 +106,10 @@
 
     </footer>
 
+    <!-- Part 3: JavaScript for interactive features -->
+    <script src="js/script.js"></script>
+
 </body>
 
 </html>
+
