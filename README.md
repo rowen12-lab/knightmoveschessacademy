@@ -5,7 +5,7 @@
 - **Student Number:** ST10529202
 - **Module:** WEDE5020 — Web Development (Introduction)
 - **Year:** 2026
-
+Live website: https://rowen12-lab.github.io/knightmoveschessacademy/ GitHub repository: https://github.com/rowen12-lab/knightmoveschessacademy
 ---
 
 ## Project Overview
@@ -154,7 +154,7 @@ The sitemap shows the structure and organisation of the Knight Moves Chess Acade
 The main page is the Home page, which connects to the four other pages.
 
 ```text
-                         KNIGHT MOVES CHESS ACADEMY
+                                  KNIGHT MOVES CHESS ACADEMY
                                       |
                  +--------------------+--------------------+
                  |         |           |          |         |
@@ -166,7 +166,7 @@ The main page is the Home page, which connects to the four other pages.
           What We Offer  Our Vision Intermediate Volunteer Opening Hours
           Call to Action Our Values Advanced    Support   Find Us
                          Community   Workshops            Social Media
-                                     & Tournaments
+                                     & Tournaments             
 ```
 
 ---
@@ -203,7 +203,43 @@ correctly across different screen sizes. Completed in this part:
 
 ---
 
-## File and Folder Structure
+
+Part 3: Enhancing Functionality and SEO
+1. Working Through Part 2 Feedback
+
+Part 2 was marked 99/100. The only mark lost was on CSS Typography Styles (4/5), where the feedback described the typography as present but with room for improvement and some inconsistencies. All other criteria received full marks.
+
+Feedback received	Action taken	File changed
+CSS Typography Styles (4/5): typography present but could be improved; some inconsistencies	Added heading and body font variables (--font-heading, --font-body). Set a heading size scale for h1–h3 with larger sizes at the 600px and 900px breakpoints. Gave headings a tighter line height. Set bold labels, table header and cell styling, and a smaller footer font. Made form controls (input, select, textarea, button) inherit the page font so they match the rest of the text. Limited paragraph and list width to 70 characters for readability.	css/style.css
+2. Progress on Part 3 Requirements
+Requirement	Page	Status
+Interactive element: accordion	index.html	Done
+Meta description (SEO)	index.html	Done
+Dynamic content with search and filter	services.html	To do
+Lightbox gallery	about.html	To do
+Interactive map	contact.html	To do
+Enquiry form with JavaScript validation	enquiry.html	To do
+Contact form with validation and email	contact.html	To do
+Animations and transitions	All pages	Accordion transitions done; others to do
+SEO on remaining pages, robots.txt, sitemap.xml	All pages	To do
+Deployment	GitHub Pages	Live
+3. Accordion (Home Page)
+
+The "What We Offer" section on index.html was changed from a bullet list to an accordion. Each programme is a button that expands to show a short description.
+
+Buttons use aria-expanded and aria-controls so the accordion works with screen readers and the keyboard.
+Behaviour is written in js/script.js: clicking a button toggles its panel and opens or closes it by changing the panel height.
+Styling is in css/style.css, with a CSS transition for smooth opening and a gold + / − indicator.
+4. Deployment
+
+The website is deployed on GitHub Pages: https://rowen12-lab.github.io/knightmoveschessacademy/
+
+Timeline and Milestones
+Milestone	Target
+Part 1: Planning, content research, sitemap, initial HTML	Weeks 1-3
+Part 2: CSS styling and responsive design	Weeks 4-6
+Part 3: JavaScript functionality, SEO, testing	Weeks 7-9
+File and Folder Structure
 knightmoveschessacademy/
 ├── index.html
 ├── about.html
@@ -212,18 +248,30 @@ knightmoveschessacademy/
 ├── contact.html
 ├── README.md
 ├── css/
-│ └── style.css
+│   └── style.css
+├── js/
+│   └── script.js
 └── images/
+Changelog
+Part 1 and Part 2
+2026-08-14 — v0.1: Initial repository setup. Created five core HTML pages with semantic structure, content, and full inter-page navigation.
+2026-08-14 — v0.2: Expanded thin content sections across all pages for depth and clarity.
+2026-08-14 — v0.3: Added images across all pages.
+2026-08-14 — v0.4: Added README with student info, goals, timeline, sitemap, and references.
+2026-09-15 — v0.5: Added responsive CSS styling with Midnight Navy/Gold colour scheme, mobile/tablet/desktop breakpoints, and Part 2 screenshot evidence.
+Part 3
 
----
+Changes from Part 2 feedback
 
-## Changelog
+2026-11-01 — v0.6: Improved typography in css/style.css in response to the Part 2 feedback (CSS Typography Styles, 4/5). Added --font-body and --font-heading variables, set a consistent heading size scale for h1–h3 with responsive increases at 600px and 900px, set line heights for headings, styled labels, table headers and cells and the footer text, made form controls inherit the page font, and limited paragraph and list width to 70 characters.
+2026-11-01 — v0.6.1: Fixed the README screenshot image paths by encoding spaces as %20, so the Part 2 screenshots display correctly. Removed a formatting error in the changelog list.
 
-- **2026-08-14 — v0.1:** Initial repository setup. Created five core HTML pages with semantic structure, content, and full inter-page navigation.
-- **2026-08-14 — v0.2:** Expanded thin content sections across all pages for depth and clarity.
-- **2026-08-14 — v0.3:** Added images across all pages.
-- **2026-08-14 — v0.4:** Added README with student info, goals, timeline, sitemap, and references.
-- - **2026-09-15 — v0.5:** Added responsive CSS styling with Midnight Navy/Gold colour scheme, mobile/tablet/desktop breakpoints, and Part 2 desktop screenshot evidence.
+New Part 3 features
+
+2026-11-01 — v0.7: Created the js folder and js/script.js, and linked the script at the end of index.html.
+2026-11-01 — v0.8: Replaced the "What We Offer" bullet list on index.html with an accessible accordion built with buttons using aria-expanded and aria-controls. Added the accordion behaviour in js/script.js and the accordion styling and open/close transition in css/style.css.
+2026-11-01 — v0.8.1: Added a meta description to index.html for SEO. Fixed HTML structure issues on the page: restored the viewport meta tag, closed the accordion and section tags correctly, and corrected a missing space in the introduction text.
+ 
 ---
 
 ## References
