@@ -12,9 +12,10 @@
 }
 
 body {
-  background-color: var(--bg-color);
+   background-color: var(--bg-color);
   color: var(--text-color);
-  font-family: Arial, sans-serif;
+  font-family: var(--font-body);
+  font-size: 1rem;
   margin: 0;
   padding: 0;
   line-height: 1.6;
@@ -73,15 +74,31 @@ main {
   padding: 0 1.5rem;
 }
 
+/* Typography: heading scale */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  line-height: 1.25;
+}
+ 
 h2, h3 {
   color: var(--primary-color);
+  margin: 1.5rem 0 0.75rem;
 }
-
-/* NEW: basic form responsiveness, since enquiry.html has a form */
+ 
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.15rem; }
+ 
+/* Typography: comfortable line length for reading */
+main p,
+main li {
+  max-width: 70ch;
+}
+ 
+/* basic form responsiveness, since enquiry.html has a form */
 form {
   max-width: 500px;
 }
-
+ 
 input, select, textarea {
   width: 100%;
   max-width: 100%;
@@ -89,13 +106,40 @@ input, select, textarea {
   margin-bottom: 0.5rem;
   box-sizing: border-box;
 }
-
-/* NEW: table responsiveness, since contact.html has an opening hours table */
+ 
+/* Typography: form text */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+ 
+input, select, textarea, button {
+  font-family: inherit;
+  font-size: 1rem;
+}
+ 
+button {
+  font-weight: 600;
+}
+ 
+/* table responsiveness, since contact.html has an opening hours table */
 table {
   width: 100%;
   border-collapse: collapse;
 }
-
+ 
+/* Typography: table text */
+th {
+  text-align: left;
+  font-weight: bold;
+}
+ 
+th, td {
+  padding: 0.5rem;
+  font-size: 0.95rem;
+}
+ 
 @media (max-width: 500px) {
   table {
     display: block;
@@ -103,40 +147,47 @@ table {
     white-space: nowrap;
   }
 }
-
+ 
 footer {
   background-color: var(--primary-color);
   color: #ffffff;
   text-align: center;
   padding: 1.5rem 1rem;
   margin-top: 3rem;
+  font-size: 0.9rem;
 }
-
+ 
 footer img {
   margin: 0 auto 8px auto;
-  max-width: 70px; /* NEW: keeps footer logo small and consistent */
+  max-width: 70px; /* keeps footer logo small and consistent */
 }
-
+ 
 /* ==========================================================
-   NEW: Responsive breakpoints
+   Responsive breakpoints
    ========================================================== */
-
+ 
 /* Tablet and up */
 @media (min-width: 600px) {
   header h1 {
     font-size: 2rem; /* back to your original larger size once screen is wider */
   }
-
+ 
   nav {
     flex-direction: row;       /* side-by-side nav on bigger screens */
     justify-content: center;
     flex-wrap: wrap;
   }
+ 
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.35rem; }
 }
-
+ 
 /* Desktop and up */
 @media (min-width: 900px) {
   main {
     padding: 0 2rem;
   }
+ 
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
 }
