@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rowen12-lab.github.io/knightmoveschessacademy/sitemap.xml
