@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Make an enquiry at Knight Moves Chess Academy about our chess programmes, volunteering or supporting our non-profit mission.">
     <title>Knight Moves Chess Academy | Enquiry</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -43,79 +44,75 @@
                 Complete the form below and tell us how we can help.
             </p>
             <img src="images/sunriseforever-chess-5987403_1920.jpg"
-         alt="A coach guiding a young student during a chess lesson"
-         width="600">
+                 alt="A coach guiding a young student during a chess lesson"
+                 width="600">
         </section>
 
 
-        <!-- Enquiry form -->
+        <!-- Enquiry form: validated by js/script.js -->
         <section>
 
             <h2>Join Our Academy</h2>
 
-            <form>
+            <form id="enquiry-form" action="enquiry.html" method="get" novalidate>
 
-                <label for="fullname">Full Name:</label>
-                <br>
-                <input type="text" id="fullname" name="fullname" required>
-                <br><br>
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" required autocomplete="name" aria-describedby="fullname-error">
+                    <span class="error-message" id="fullname-error" role="alert"></span>
+                </div>
 
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required autocomplete="email" aria-describedby="email-error">
+                    <span class="error-message" id="email-error" role="alert"></span>
+                </div>
 
-                <label for="email">Email Address:</label>
-                <br>
-                <input type="email" id="email" name="email" required>
-                <br><br>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="082 123 4567" aria-describedby="phone-error">
+                    <span class="error-message" id="phone-error" role="alert"></span>
+                </div>
 
+                <div class="form-group">
+                    <label for="experience">Chess Experience</label>
+                    <select id="experience" name="experience" required aria-describedby="experience-error">
+                        <option value="">Choose your experience</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="some-experience">Some Experience</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+                    <span class="error-message" id="experience-error" role="alert"></span>
+                </div>
 
-                <label for="phone">Phone Number:</label>
-                <br>
-                <input type="tel" id="phone" name="phone">
-                <br><br>
+                <div class="form-group">
+                    <label for="programme">Programme Interested In</label>
+                    <select id="programme" name="programme" required aria-describedby="programme-error">
+                        <option value="">Choose a programme</option>
+                        <option value="beginner">Beginner Chess Programme</option>
+                        <option value="junior">Junior Chess Programme</option>
+                        <option value="intermediate">Intermediate Chess Programme</option>
+                        <option value="advanced">Advanced Chess Programme</option>
+                        <option value="workshop">Chess Workshop</option>
+                        <option value="tournament">Tournament Training</option>
+                    </select>
+                    <span class="error-message" id="programme-error" role="alert"></span>
+                </div>
 
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" required aria-describedby="message-error message-count"></textarea>
+                    <small id="message-count">0 / 500 characters</small>
+                    <span class="error-message" id="message-error" role="alert"></span>
+                </div>
 
-                <label for="experience">Chess Experience:</label>
-                <br>
-
-                <select id="experience" name="experience">
-
-                    <option value="beginner">Beginner</option>
-                    <option value="some-experience">Some Experience</option>
-                    <option value="intermediate">Intermediate</option>
-                    <option value="advanced">Advanced</option>
-
-                </select>
-
-                <br><br>
-
-
-                <label for="programme">Programme Interested In:</label>
-                <br>
-
-                <select id="programme" name="programme">
-
-                    <option value="beginner">Beginner Chess Programme</option>
-                    <option value="junior">Junior Chess Programme</option>
-                    <option value="intermediate">Intermediate Chess Programme</option>
-                    <option value="advanced">Advanced Chess Programme</option>
-                    <option value="workshop">Chess Workshop</option>
-                    <option value="tournament">Tournament Training</option>
-
-                </select>
-
-                <br><br>
-
-
-                <label for="message">Message:</label>
-                <br>
-
-                <textarea id="message" name="message" rows="6" cols="40"></textarea>
-
-                <br><br>
-
-
-                <input type="submit" value="Submit Enquiry">
+                <button type="submit" class="form-button">Submit Enquiry</button>
 
             </form>
+
+            <!-- Filled in by js/script.js after a valid submission -->
+            <div id="enquiry-response" class="response-box" role="status" tabindex="-1" hidden></div>
 
         </section>
 
@@ -125,8 +122,8 @@
 
             <h2>Volunteer With Us</h2>
             <img src="images/konstantinos-papadopoulos-IMOg9ErOOsU-unsplash.jpg"
-         alt="A volunteer coach helping students during a group chess session"
-         width="600">
+                 alt="A volunteer coach helping students during a group chess session"
+                 width="600">
             <p>
                 Knight Moves Chess Academy welcomes volunteers who would like
                 to support our lessons, tournaments, workshops and community
@@ -169,6 +166,9 @@
         </p>
 
     </footer>
+
+    <!-- Part 3: JavaScript for interactive features -->
+    <script src="js/script.js"></script>
 
 </body>
 
