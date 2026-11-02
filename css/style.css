@@ -362,3 +362,33 @@ textarea.invalid {
 .response-box h3 {
   margin-top: 0;
 }
+/* ==========================================================
+   Part 3: Contact page map and compiled email
+   ========================================================== */
+
+#map {
+  height: 350px;
+  max-width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.leaflet-container img {
+  max-width: none;
+}
+
+.email-preview {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+.mail-link {
+  display: inline-block;
+  text-decoration: none;
+}
