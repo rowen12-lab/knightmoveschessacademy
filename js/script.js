@@ -174,4 +174,167 @@ document.addEventListener("DOMContentLoaded", function () {
     showProgrammes();
   }
 
+
+  // ---------- Enquiry form validation (enquiry.html) ----------
+  const enquiryForm = document.getElementById("enquiry-form");
+
+  if (enquiryForm) {
+
+    const responseBox = document.getElementById("enquiry-response");
+    const messageField = document.getElementById("message");
+    const messageCount = document.getElementById("message-count");
+    const MESSAGE_MIN = 10;
+    const MESSAGE_MAX = 500;
+
+    // One check per field. Each returns an error message, or "" when the value is fine.
+    const validators = {
+      fullname: function (value) {
+        if (value === "") { return "Enter your full name."; }
+        if (value.length < 2) { return "Your name must be at least 2 characters."; }
+        if (!/^[\p{L}][\p{L}\s'-]*$/u.test(value)) {
+          return "Use letters, spaces, hyphens or apostrophes only.";
+        }
+        return "";
+      },
+      email: function (value) {
+        if (value === "") { return "Enter your email address."; }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)) {
+          return "Enter a valid email address, for example name@example.com.";
+        }
+        return "";
+      },
+      phone: function (value) {
+        const digits = value.replace(/[\s-]/g, "");
+        if (digits === "") { return "Enter your phone number."; }
+        // 10 digits starting with 0, or +27 followed by 9 digits
+        if (!/^(\+27|0)\d{9}$/.test(digits)) {
+          return "Enter a valid number, for example 082 123 4567 or +27 82 123 4567.";
+        }
+        return "";
+      },
+      experience: function (value) {
+        return value === "" ? "Choose your chess experience." : "";
+      },
+      programme: function (value) {
+        return value === "" ? "Choose a programme." : "";
+      },
+      message: function (value) {
+        if (value === "") { return "Enter a message."; }
+        if (value.length < MESSAGE_MIN) {
+          return "Your message must be at least " + MESSAGE_MIN + " characters.";
+        }
+        if (value.length > MESSAGE_MAX) {
+          return "Your message must be " + MESSAGE_MAX + " characters or fewer.";
+        }
+        return "";
+      }
+    };
+
+    const fieldIds = Object.keys(validators);
+
+    // What the visitor sees after a valid enquiry, by programme
+    const programmeInfo = {
+      beginner: "No experience or equipment is needed to start. We will tell you about the next beginner group.",
+      junior: "This programme is for children. We will ask for a parent or guardian's details when we contact you.",
+      intermediate: "We will recommend the right group for your current skill level.",
+      advanced: "We will talk to you about your competitive goals and the right group for you.",
+      workshop: "Workshop dates are announced each term. We will send you the upcoming dates.",
+      tournament: "Tournament training depends on the tournament calendar. We will send you the upcoming dates."
+    };
+
+    function showError(id, message) {
+      const field = document.getElementById(id);
+      document.getElementById(id + "-error").textContent = message;
+      if (message === "") {
+        field.classList.remove("invalid");
+        field.removeAttribute("aria-invalid");
+      } else {
+        field.classList.add("invalid");
+        field.setAttribute("aria-invalid", "true");
+      }
+    }
+
+    function validateField(id) {
+      const message = validators[id](document.getElementById(id).value.trim());
+      showError(id, message);
+      return message === "";
+    }
+
+    function updateMessageCount() {
+      messageCount.textContent = messageField.value.length + " / " + MESSAGE_MAX + " characters";
+    }
+
+    // Check a field when the visitor leaves it, and re-check while fixing an error
+    fieldIds.forEach(function (id) {
+      const field = document.getElementById(id);
+      field.addEventListener("blur", function () { validateField(id); });
+      field.addEventListener("input", function () {
+        if (field.classList.contains("invalid")) { validateField(id); }
+      });
+      field.addEventListener("change", function () {
+        if (field.classList.contains("invalid")) { validateField(id); }
+      });
+    });
+    messageField.addEventListener("input", updateMessageCount);
+
+    function showResponse(details) {
+      const heading = document.createElement("h3");
+      heading.textContent = "Thank you, " + details.name;
+
+      const intro = document.createElement("p");
+      intro.textContent = "We have received your enquiry about the " + details.programme + ".";
+
+      const programmeText = document.createElement("p");
+      programmeText.textContent = programmeInfo[details.programmeValue];
+
+      const costText = document.createElement("p");
+      costText.textContent = "Cost: as a non-profit academy we work to keep our programmes accessible, and we will explain any costs when we reply.";
+
+      const availabilityText = document.createElement("p");
+      availabilityText.textContent = "Availability: places in each group are limited, so we will confirm availability when we reply.";
+
+      const contactText = document.createElement("p");
+      contactText.textContent = "We will contact you at " + details.email + " or on " + details.phone + ".";
+
+      responseBox.replaceChildren(heading, intro, programmeText, costText, availabilityText, contactText);
+      responseBox.hidden = false;
+      responseBox.focus();
+      responseBox.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    enquiryForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      let firstInvalid = null;
+      fieldIds.forEach(function (id) {
+        if (!validateField(id) && firstInvalid === null) {
+          firstInvalid = document.getElementById(id);
+        }
+      });
+
+      if (firstInvalid !== null) {
+        responseBox.hidden = true;
+        firstInvalid.focus();
+        return;
+      }
+
+      const programmeSelect = document.getElementById("programme");
+      const details = {
+        name: document.getElementById("fullname").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        phone: document.getElementById("phone").value.trim(),
+        programmeValue: programmeSelect.value,
+        programme: programmeSelect.options[programmeSelect.selectedIndex].textContent
+      };
+
+      enquiryForm.reset();
+      updateMessageCount();
+      showResponse(details);
+    });
+
+    updateMessageCount();
+  }
+
 });
+
+
